@@ -1,6 +1,6 @@
 # mixed-sample-graphs
 
-This is our intro... It could be better.
+The obejctive of this project is to take annotated variants from mixed tissue samples and determine if they are associated with population stratification or are tumor specific.
 
 ## Inputs
 * Data from [expressed-variant-impact](https://github.com/collaborativebioinformatics/expressed-variant-impact):
@@ -18,3 +18,5 @@ This is our intro... It could be better.
 ## Flowchart
 
 ## Methods
+* [MuTect](https://github.com/broadinstitute/mutect)
+* [somalier](https://github.com/brentp/somalier)
