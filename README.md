@@ -25,9 +25,9 @@ The obejctive of this project is to take annotated variants from mixed tissue sa
 
 
 ## People/Team
-James Baye
-Alan Cleary
-Virginie Grosboillot
-Sam Hokin
-Adelaide Rhodes 
-Chaitanya Srinivasan
+James Baye  
+Alan Cleary  
+Virginie Grosboillot  
+Sam Hokin  
+Adelaide Rhodes  
+Chaitanya Srinivasan  
