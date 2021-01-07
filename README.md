@@ -20,3 +20,14 @@ The obejctive of this project is to take annotated variants from mixed tissue sa
 ## Methods
 * [MuTect](https://github.com/broadinstitute/mutect)
 * [somalier](https://github.com/brentp/somalier)
+
+## References
+
+
+## People/Team
+James Baye
+Alan Cleary
+Virginie Grosboillot
+Sam Hokin
+Adelaide Rhodes 
+Chaitanya Srinivasan
