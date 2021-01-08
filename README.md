@@ -55,9 +55,18 @@ An example input VCF file:
 **CAVIAR:**
 * Our pipeline annotates the input VCF files statistics generated from CAVIAR (see the [CAVIAR GitHub](https://github.com/fhormoz/caviar) for a complete list our output files
 
+## Evaluation
+
 ### Validation dataset
 The VCF data used for this project were taken from the study "Characterization of cancer omics and drug perturbations in panels of lung cancer cells" (https://doi.org/10.1038/s41598-019-55692-9).
 
+**Somalier:**
+
+**CAVIAR:**
+
+The VCF data represents samples taken from a Japanese population, so we used the Japanese HapMap available from the 1000 Genomes Project.
+
+### Results
 **Somalier:**
 
 Somalier does not seem to resolve the ancestry and relatedness, but that is not surprising, because the genome sketch is based on the 1000 genomes project.
@@ -68,9 +77,22 @@ However, we did not want to use any controlled data sets for this project becaus
 One intriguing option was to test the tool using files from the Personal Genome Project, but that would not be disease-related.
 
 **CAVIAR:**
+Unfortunately we were not able to obtain CAVIAR results for this study.
+This is because the samples in the dataset correspond to cell cultures, rather than individuals within the population.
+Subsequently, there was no phenotypic information available on which to build a GWAS anlysis.
+Additionally, the samples corresponded to a variety of different treatments, meaning there was no subpopulation that could be used as a control.
+Lastly, the number of samples was too small for any GWAS summary statistics to have any significance.
 
-The VCF data represents samples taken from a Japanese population, so we used the Japanese HapMap available from the 1000 Genomes Project.
+## Future work
+The validation dataset was chosen as part of a "Bringing Pivotal SNPs for Differential RNAseq Profiles to the Clinic!" hackathon.
+While it wasn't ideal for our pipeline, it accommodated other teams, such as the team working on the [viravate2 pipeline](https://github.com/collaborativebioinformatics/viravate2).
+Specifically, the dataset represented mixed tissue samples from patients with lung cancer that had been administered different treatments.
+This makes the data ammenable to eQTL analysis.
+Interestingly, there is a variant of CAVIAR called eCAVIAR that, in addition to GWAS statistics, takes eQTL data into consideration when identifying causal variants.
+If GWAS analysis could have also been performed on this dataset (as discuessed in the CAVIAR results) then this could've been used to create a feedback loop between DSVifier and viravate2 to rapidly assess treatments in a clincial environment, perhaps even on a personalized level.
 
+We would like to note the the CAVIAR pipeline could be further enhanced using [LD score regression](https://doi.org/10.1038/ng.3211).
+Such techniques would help remove confounding biases from the samples, which could help further refine the set of variants that should be targeted by downstream analyses and clinical trials.
 
 ## References
 
