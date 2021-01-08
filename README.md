@@ -1,9 +1,13 @@
 # mixed-sample-graphs
 
 ## What's the problem?
-The objective of this project is to take annotated variants from mixed tissue samples and determine if they are associated with population stratification or are tumor specific.
+Mixed tissue samples contain a variety of variants.
+While many of these variants are legitimate biological signal, not all variants should necessarily be implicated in the diease of interest.
+The objective of this project is to take annotated variants from mixed tissue samples and identify variants that are likely associated with the disease being studied while accounting for confounding effects, such as population stratification.
 
 ## Why should we solved it?
+Associating variants with a particular disease enhances our understanding of its genetic provenance.
+More practically, variants from mixed samples can guide clinicians during diagnosis and treatment, and aid drug developers in the identification of gene targets.
 
 ## Workflow Diagram
 ![Workflow Diagram](images/workflow_v3.png "Workflow Diagram")
