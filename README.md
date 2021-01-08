@@ -1,23 +1,27 @@
 # DSVifier
+
+
 ## What's the problem?
 Mixed tissue samples contain a variety of variants.
 While many of these variants are legitimate biological signal, not all variants should necessarily be implicated in the diease of interest.
 The objective of this project is to take annotated variants from mixed tissue samples and identify variants that are likely associated with the disease being studied while accounting for confounding effects, such as population stratification.
 
+
 ## Why should we solve it?
 Associating variants with a particular disease enhances our understanding of its genetic provenance.
 More practically, variants from mixed samples can guide clinicians during diagnosis and treatment, and aid drug developers in the identification of gene targets.
 
-## Workflow Diagram
+
+## Workflow diagram
 ![Workflow Diagram](images/workflow_v5.png "Workflow Diagram")
 
-## How to use ?
-This pipeline is conceived to be used with the data generated with the [Trinity CTAT pipeline](https://github.com/collaborativebioinformatics/expressed-variant-impact). The output data can then be used by the [viravate2 pipeline](https://github.com/collaborativebioinformatics/viravate2) and integrated in clinical reports with the [snpReportR](https://github.com/collaborativebioinformatics/expressed-variant-reporting). 
 
-The `Somalier`can allow to identify sample swaps or duplicates in a file [@pedersenSomalierRapidRelatedness2020]. It will also give information on the ancestry or relatedness of the samples if the dataset is big enough >1000 samples.
-GWAS need a relatively important set of data to give accurate results (>10000).
-
-
+## How to use?
+This pipeline performs two different analyses: one with Somalier and one with CAVIAR.
+Both tools consume VCF files output by the [Trinity CTAT pipeline](https://github.com/collaborativebioinformatics/expressed-variant-impact).
+The data output by Somalier can be used to extract informative sites, evaluate relatedness of variants, and perform quality-control.
+It can also be integrated in clinical reports with the [snpReportR](https://github.com/collaborativebioinformatics/expressed-variant-reporting).
+The data output by CAVIAR can be used to evaluate which variants are likely casual and can be used in downstream analyses, such as the [viravate2 pipeline](https://github.com/collaborativebioinformatics/viravate2).
 
 ### Dependencies
 * [GLnexus](https://github.com/dnanexus-rnd/GLnexus)
@@ -32,35 +36,40 @@ However, the pipeline is composed of readily available bioinformatic tools/pipel
 Each tool's installation process can be found by following the provided links.
 Additaionlly, these tools are available on the DNAnexus platform, which we used when developing the pipeline.
 
-In the case of Somalier, the provided Jupyter notebook depends on DNAnexus.
+A Somalier example is provided as a Jupyter notebook, which depends on DNAnexus and uses the site file [sites.hg38.rna.vcf.gz](https://github.com/brentp/somalier/files/4566475/sites.hg38.rna.vcf.gz).
 
 In the case of CAVIAR, we leave it to users to use a GWAS pipeline that best fits their data/study.
 
 ### Inputs
-Input data format is CVF format as it is the standard format for storing variation data (ref), because it is unambiguous, scalable and flexible.
-For the `Somalier` analysis, the site file used in this example can be find here: [sites.hg38.rna.vcf.gz](https://github.com/brentp/somalier/files/4566475/sites.hg38.rna.vcf.gz).
-* Data from [expressed-variant-impact](https://github.com/collaborativebioinformatics/expressed-variant-impact):
-  * variant vcf files (fully annotated variant calls from HaplotypeCaller)
-  * `cancer.vcf` and `cancer.tab` (a set of prioritized cancer-relevant variants detected in the sample)
-* Data from [viravate2](https://github.com/collaborativebioinformatics/viravate2):
-  * "A large table with DE results and associated variants. This would include things like gene names, logFC values, significance values, and then the variant information."
+* Both Somalier and CAVIAR require VCF files from the [Trinity CTAT pipeline](https://github.com/collaborativebioinformatics/expressed-variant-impact)
+* CAVIAR also requires haplotype information for the population being studied, such as HapMap data from the 1000 genomes project
 
+An example input VCF file:
 ![Example of an input .vcf file](images/sample_vcf.png "sample of a .vcf file")
 
 ### Outputs
-* Data for [expressed-variant-reporting](https://github.com/collaborativebioinformatics/expressed-variant-reporting):
-  * See [inputs docs](https://docs.google.com/spreadsheets/d/1pcB_bI_83B__sJ_Qw3tYDUhAYTz7Bh9SBvxjMzd8L4U/edit#gid=0)
-* Data for [viravate2](https://github.com/collaborativebioinformatics/viravate2):
-  * VCF file containig variants associated with population stratification or tumors
+**Somalier:**
+* HTML files describing various relationships among the input variants
+* TSV files containing the data visualized in the HTML files
+
+**CAVIAR:**
+* Our pipeline annotates the input VCF files statistics generated from CAVIAR (see the [CAVIAR GitHub](https://github.com/fhormoz/caviar) for a complete list our output files
 
 ### Validation dataset
+The VCF data used for this project were taken from the study "Characterization of cancer omics and drug perturbations in panels of lung cancer cells" (https://doi.org/10.1038/s41598-019-55692-9).
+
 **Somalier:**
 
-The tool does not seem to resolve the ancestry and relatedness, but that is not surprising, because the genome sketch is based on the 1000 genomes project.
-A possible resolution could be achieved by using a genome sketch based on cell lines. So finding the normal samples and using the instructions from the somalier github to generate the sketches as well as a set of labels for the cells associated with each sketch.
+Somalier does not seem to resolve the ancestry and relatedness, but that is not surprising, because the genome sketch is based on the 1000 genomes project.
+A possible resolution could be achieved by using a genome sketch based on cell lines, so finding the normal samples and using the instructions from the Somalier GitHub to generate the sketches as well as a set of labels for the cells associated with each sketch.
 There are data sets that can be used to generate these genome sketches (https://www.ebi.ac.uk/ega/studies/EGAS00001000610 and https://www.nature.com/articles/nbt.3080 - not sure if this one contains our cells). 
-Or, another option to test this method is to use another data set that would align to the 1000 genomes genome sketch.  I looked around but did not want to use any controlled data sets for this project because we are putting it out on github.  One intriguing option was to test the tool using files from the Personal Genome Project, but that would not be disease-related.
+Or, another option to test this method is to use another data set that would align to the 1000 genomes genome sketch.
+However, we did not want to use any controlled data sets for this project because we are putting it out on GitHub.
+One intriguing option was to test the tool using files from the Personal Genome Project, but that would not be disease-related.
 
+**CAVIAR:**
+
+The VCF data represents samples taken from a Japanese population, so we used the Japanese HapMap available from the 1000 Genomes Project.
 
 
 ## References
