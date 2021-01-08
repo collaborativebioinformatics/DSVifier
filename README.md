@@ -7,11 +7,12 @@ The objective of this project is to take annotated variants from mixed tissue sa
 ## Why should we solved it?
 
 ## Workflow Diagram
-add the workflow
+![Workflow Diagram](images/workflow.svg "Workflow Diagram")
 
 ## How to use ?
 
 ### Dependencies
+* [GLnexus]https://github.com/dnanexus-rnd/GLnexus
 * [somalier](https://github.com/brentp/somalier)
 * [MuTect](https://github.com/broadinstitute/mutect)
 * [CAVIAR](http://genetics.cs.ucla.edu/caviar/manual.html)
@@ -26,7 +27,7 @@ add the workflow
 * Data from [viravate2](https://github.com/collaborativebioinformatics/viravate2):
   * "A large table with DE results and associated variants. This would include things like gene names, logFC values, significance values, and then the variant information."
 
-![Example of an input .vcf file](images/sample_vcf.png)
+![Example of an input .vcf file](images/sample_vcf.png "sample of a .vcf file")
 
 ### Outputs
 * Data for [expressed-variant-reporting](https://github.com/collaborativebioinformatics/expressed-variant-reporting):
