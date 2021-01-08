@@ -1,4 +1,4 @@
-# DSVifier
+![logo](DSVifier.png "DSVifier logo")
 
 
 ## What's the problem?
