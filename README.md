@@ -1,11 +1,10 @@
-# mixed-sample-graphs
-
+# DSVifier
 ## What's the problem?
 Mixed tissue samples contain a variety of variants.
 While many of these variants are legitimate biological signal, not all variants should necessarily be implicated in the diease of interest.
 The objective of this project is to take annotated variants from mixed tissue samples and identify variants that are likely associated with the disease being studied while accounting for confounding effects, such as population stratification.
 
-## Why should we solved it?
+## Why should we solve it?
 Associating variants with a particular disease enhances our understanding of its genetic provenance.
 More practically, variants from mixed samples can guide clinicians during diagnosis and treatment, and aid drug developers in the identification of gene targets.
 
@@ -13,7 +12,7 @@ More practically, variants from mixed samples can guide clinicians during diagno
 ![Workflow Diagram](images/workflow_v3.png "Workflow Diagram")
 
 ## How to use ?
-This pipeline is conceived to be used with the data generated with the pipeline described at [expressed-variant-impact](https://github.com/collaborativebioinformatics/expressed-variant-impact). The output data can then be used with the [viravate2](https://github.com/collaborativebioinformatics/viravate2) and processed by the [snpReportR](https://github.com/collaborativebioinformatics/expressed-variant-reporting). 
+This pipeline is conceived to be used with the data generated with the [Trinity CTAT pipeline](https://github.com/collaborativebioinformatics/expressed-variant-impact). The output data can then be used by the [viravate2 pipeline](https://github.com/collaborativebioinformatics/viravate2) and integrated in clinical reports with the [snpReportR](https://github.com/collaborativebioinformatics/expressed-variant-reporting). 
 
 ### Dependencies
 * [GLnexus](https://github.com/dnanexus-rnd/GLnexus)
