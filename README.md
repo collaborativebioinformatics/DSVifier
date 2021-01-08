@@ -6,10 +6,10 @@ The objective of this project is to take annotated variants from mixed tissue sa
 ## Why should we solved it?
 
 ## Workflow Diagram
-![Workflow Diagram](images/workflow.png "Workflow Diagram")
+![Workflow Diagram](images/workflow_v3.png "Workflow Diagram")
 
 ## How to use ?
-This pipeline is conceived to be used with the data generated with the pipeline described at [expressed-variant-impact](https://github.com/collaborativebioinformatics/expressed-variant-impact). The output data can then be used with the [viravate2](https://github.com/collaborativebioinformatics/viravate2) and 
+This pipeline is conceived to be used with the data generated with the pipeline described at [expressed-variant-impact](https://github.com/collaborativebioinformatics/expressed-variant-impact). The output data can then be used with the [viravate2](https://github.com/collaborativebioinformatics/viravate2) and processed by the [snpReportR](https://github.com/collaborativebioinformatics/expressed-variant-reporting). 
 
 ### Dependencies
 * [GLnexus](https://github.com/dnanexus-rnd/GLnexus)
