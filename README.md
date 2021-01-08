@@ -41,7 +41,23 @@ A Somalier example is provided as a Jupyter notebook, which depends on DNAnexus 
 In the case of CAVIAR, we leave it to users to use a GWAS pipeline that best fits their data/study.
 
 ### Inputs
-* Both Somalier and CAVIAR require VCF files from the [Trinity CTAT pipeline](https://github.com/collaborativebioinformatics/expressed-variant-impact)
+* PLINK is used to determine LD across the samples, generating an LD file for input into CAVIAR, which looks like this:
+```
+ CHR_A         BP_A SNP_A  CHR_B         BP_B SNP_B           R2 
+     1      6634453    .      1      6634454    .            1 
+     1      6635063    .      1      6635184    .            1 
+     1      6635063    .      1      6888144    .            1 
+     1      6888144    .      1      7780866    .            1 
+     1     10413143    .      1     10419734    .     0.315315 
+     1     10413143    .      1     10430824    .         0.25 
+     1     10413143    .      1     10431152    .          0.2 
+     1     10419734    .      1     10430824    .         0.25 
+     1     10419734    .      1     10431152    .          0.2 
+     1     20650728    .      1     20650956    .     0.333333 
+     ...
+```
+(vcf-merge was used to create a single VCF from the many individual-sample VCFs).
+* Both Somalier and CAVIAR require files derived from the [Trinity CTAT pipeline](https://github.com/collaborativebioinformatics/expressed-variant-impact)
 * CAVIAR also requires haplotype information for the population being studied, such as HapMap data from the 1000 genomes project
 
 An example input VCF file:
