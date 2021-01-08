@@ -9,7 +9,7 @@ Associating variants with a particular disease enhances our understanding of its
 More practically, variants from mixed samples can guide clinicians during diagnosis and treatment, and aid drug developers in the identification of gene targets.
 
 ## Workflow Diagram
-![Workflow Diagram](images/workflow_v4.png "Workflow Diagram")
+![Workflow Diagram](images/workflow_v5.png "Workflow Diagram")
 
 ## How to use ?
 This pipeline is conceived to be used with the data generated with the [Trinity CTAT pipeline](https://github.com/collaborativebioinformatics/expressed-variant-impact). The output data can then be used by the [viravate2 pipeline](https://github.com/collaborativebioinformatics/viravate2) and integrated in clinical reports with the [snpReportR](https://github.com/collaborativebioinformatics/expressed-variant-reporting). 
