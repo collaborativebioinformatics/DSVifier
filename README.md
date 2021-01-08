@@ -12,7 +12,7 @@ The objective of this project is to take annotated variants from mixed tissue sa
 ## How to use ?
 
 ### Dependencies
-* [GLnexus]https://github.com/dnanexus-rnd/GLnexus
+* [GLnexus](https://github.com/dnanexus-rnd/GLnexus)
 * [somalier](https://github.com/brentp/somalier)
 * [MuTect](https://github.com/broadinstitute/mutect)
 * [CAVIAR](http://genetics.cs.ucla.edu/caviar/manual.html)
