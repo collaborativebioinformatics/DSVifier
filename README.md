@@ -47,10 +47,11 @@ In the case of CAVIAR, we leave it to users to use a GWAS pipeline that best fit
 ![Example of an input .vcf file](images/sample_vcf.png "sample of a .vcf file")
 
 ### Outputs
-* Data for [expressed-variant-reporting](https://github.com/collaborativebioinformatics/expressed-variant-reporting):
-  * See [inputs docs](https://docs.google.com/spreadsheets/d/1pcB_bI_83B__sJ_Qw3tYDUhAYTz7Bh9SBvxjMzd8L4U/edit#gid=0)
-* Data for [viravate2](https://github.com/collaborativebioinformatics/viravate2):
-  * VCF file containig variants associated with population stratification or tumors
+* Somalier
+  * HTML files describing various relationships among the input variants
+  * TSV files containing the data visualized in the HTML files
+* CAVIAR
+  * Our pipeline annotates the input VCF files statistics generated from CAVIAR (see the [CAVIAR GitHub](https://github.com/fhormoz/caviar) for a complete list our output files
 
 ### Validation dataset
 **Somalier:**
