@@ -1,0 +1,90 @@
+{
+  "name": "caviar",
+  "title": "caviar",
+  "summary": "caviar",
+  "dxapi": "1.0.0",
+  "inputSpec": [
+    {
+      "name": "ld_file",
+      "label": "the ld input file",
+      "help": "",
+      "class": "file",
+      "patterns": ["*"],
+      "optional": false
+    },
+    {
+      "name": "z_file",
+      "label": "the z-score and rsID files",
+      "help": "",
+      "class": "file",
+      "patterns": ["*"],
+      "optional": false
+    },
+    {
+      "name": "other_options",
+      "label": "Other command line options for CAVIAR",
+      "help": "-r RHO set pho=probability (default 0.95); -g GAMMA set gamma=the prior of a SNP being causal (default 0.01); -c causal=set the maximum number of causal SNPs",
+      "class": "string",
+      "optional": true
+    }
+  ],
+  "outputSpec": [
+    {
+      "name": "output_set",
+      "label": "CAVIAR set file",
+      "help": "",
+      "class": "file",
+      "patterns": ["*"]
+    },
+    {
+      "name": "output_post",
+      "label": "CAVIAR post file",
+      "help": "",
+      "class": "file",
+      "patterns": ["*"]
+    },
+    {
+      "name": "output_log",
+      "label": "CAVIAR log file",
+      "help": "",
+      "class": "file",
+      "patterns": ["*"]
+    }
+  ],
+  "runSpec": {
+    "interpreter": "bash",
+    "timeoutPolicy": {
+      "*": {
+        "hours": 48
+      }
+    },
+    "execDepends": [
+      {
+        "name": "libgsl2"
+      },
+      {
+        "name": "libgsl-dev"
+      },
+      {
+        "name": "libc6-dev"
+      },
+      {
+        "name": "libstdc++6"
+      }
+    ],
+    "distribution": "Ubuntu",
+    "release": "16.04",
+    "version": "1",
+    "file": "src/code.sh"
+  },
+  "ignoreReuse": false,
+  "regionalOptions": {
+    "aws:us-east-1": {
+      "systemRequirements": {
+        "*": {
+          "instanceType": "mem1_ssd1_v2_x4"
+        }
+      }
+    }
+  }
+}
