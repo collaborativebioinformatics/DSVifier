@@ -42,25 +42,34 @@ In the case of CAVIAR, we leave it to users to use a GWAS pipeline that best fit
 
 ### Inputs
 * Both Somalier and CAVIAR require VCF files from the [Trinity CTAT pipeline](https://github.com/collaborativebioinformatics/expressed-variant-impact)
-* CAVIAR also requires haplotype information for the population being studied, such as HapMap data from 1000 genomes project
+* CAVIAR also requires haplotype information for the population being studied, such as HapMap data from the 1000 genomes project
 
+An example input VCF file:
 ![Example of an input .vcf file](images/sample_vcf.png "sample of a .vcf file")
 
 ### Outputs
-* Somalier
-  * HTML files describing various relationships among the input variants
-  * TSV files containing the data visualized in the HTML files
-* CAVIAR
-  * Our pipeline annotates the input VCF files statistics generated from CAVIAR (see the [CAVIAR GitHub](https://github.com/fhormoz/caviar) for a complete list our output files
+**Somalier:**
+* HTML files describing various relationships among the input variants
+* TSV files containing the data visualized in the HTML files
+
+**CAVIAR:**
+* Our pipeline annotates the input VCF files statistics generated from CAVIAR (see the [CAVIAR GitHub](https://github.com/fhormoz/caviar) for a complete list our output files
 
 ### Validation dataset
+The VCF data used for this project were taken from the study "Characterization of cancer omics and drug perturbations in panels of lung cancer cells" (https://doi.org/10.1038/s41598-019-55692-9).
+
 **Somalier:**
 
-The tool does not seem to resolve the ancestry and relatedness, but that is not surprising, because the genome sketch is based on the 1000 genomes project.
-A possible resolution could be achieved by using a genome sketch based on cell lines. So finding the normal samples and using the instructions from the somalier github to generate the sketches as well as a set of labels for the cells associated with each sketch.
+Somalier does not seem to resolve the ancestry and relatedness, but that is not surprising, because the genome sketch is based on the 1000 genomes project.
+A possible resolution could be achieved by using a genome sketch based on cell lines, so finding the normal samples and using the instructions from the Somalier GitHub to generate the sketches as well as a set of labels for the cells associated with each sketch.
 There are data sets that can be used to generate these genome sketches (https://www.ebi.ac.uk/ega/studies/EGAS00001000610 and https://www.nature.com/articles/nbt.3080 - not sure if this one contains our cells). 
-Or, another option to test this method is to use another data set that would align to the 1000 genomes genome sketch.  I looked around but did not want to use any controlled data sets for this project because we are putting it out on github.  One intriguing option was to test the tool using files from the Personal Genome Project, but that would not be disease-related.
+Or, another option to test this method is to use another data set that would align to the 1000 genomes genome sketch.
+However, we did not want to use any controlled data sets for this project because we are putting it out on GitHub.
+One intriguing option was to test the tool using files from the Personal Genome Project, but that would not be disease-related.
 
+**CAVIAR:**
+
+The VCF data represents samples taken from a Japanese population, so we used the Japanese HapMap available from the 1000 Genomes Project.
 
 
 ## References
