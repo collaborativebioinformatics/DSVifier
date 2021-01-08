@@ -1,0 +1,28 @@
+PLINK v1.90b6.21 64-bit (19 Oct 2020)
+Options in effect:
+  --allow-extra-chr
+  --bfile plink
+  --blocks no-pheno-req
+
+Hostname: morangie
+Working directory: /home/shokin/mixed-sample-graphs
+Start time: Fri Jan  8 09:58:36 2021
+
+Random number seed: 1610125116
+15918 MB RAM detected; reserving 7959 MB for main workspace.
+67550 variants loaded from .bim file.
+122 people (0 males, 0 females, 122 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to plink.nosex .
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 122 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.02924.
+67550 variants and 122 people pass filters and QC.
+Note: No phenotypes present.
+--blocks: 36 haploblocks written to plink.blocks .
+Extra block details written to plink.blocks.det .
+Longest span: 198.514kb.
+
+End time: Fri Jan  8 09:58:36 2021
