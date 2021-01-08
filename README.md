@@ -7,7 +7,7 @@ The objective of this project is to take annotated variants from mixed tissue sa
 ## Why should we solved it?
 
 ## Workflow Diagram
-![Workflow Diagram](images/workflow.eps "Workflow Diagram")
+![Workflow Diagram](images/workflow.png "Workflow Diagram")
 
 ## How to use ?
 
