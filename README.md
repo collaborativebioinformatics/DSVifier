@@ -9,6 +9,7 @@ The objective of this project is to take annotated variants from mixed tissue sa
 ![Workflow Diagram](images/workflow.png "Workflow Diagram")
 
 ## How to use ?
+This pipeline is conceived to be used with the data generated with the pipeline described at [expressed-variant-impact](https://github.com/collaborativebioinformatics/expressed-variant-impact). The output data can then be used with the [viravate2](https://github.com/collaborativebioinformatics/viravate2) and 
 
 ### Dependencies
 * [GLnexus](https://github.com/dnanexus-rnd/GLnexus)
@@ -20,8 +21,7 @@ The objective of this project is to take annotated variants from mixed tissue sa
 
 ### Inputs
 Input data format is CVF format as it is the standard format for storing variation data (ref), because it is unambiguous, scalable and flexible.
-For the `Somalier` analysis, the site file used in this example can be find here: [sites.hg38.rna.vcf.gz](https://github.com/brentp/somalier/releases/tag/v0.2.12) and the reference genome here:
-[sites.hg38.rna.vcf.gz](https://github.com/brentp/somalier/releases/tag/v0.2.12)
+For the `Somalier` analysis, the site file used in this example can be find here: [sites.hg38.rna.vcf.gz](https://github.com/brentp/somalier/files/4566475/sites.hg38.rna.vcf.gz).
 * Data from [expressed-variant-impact](https://github.com/collaborativebioinformatics/expressed-variant-impact):
   * variant vcf files (fully annotated variant calls from HaplotypeCaller)
   * `cancer.vcf` and `cancer.tab` (a set of prioritized cancer-relevant variants detected in the sample)
