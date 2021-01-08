@@ -24,8 +24,17 @@ GWAS need a relatively important set of data to give accurate results (>10000).
 * [PLINK](http://zzz.bwh.harvard.edu/plink/)
 * [somalier 0.2.12](https://github.com/brentp/somalier)
 * [CAVIAR](http://genetics.cs.ucla.edu/caviar/manual.html)
+* GWAS pipeline
 
 ### Installation
+The DSVifier pipeline has not been implemented as a production pipeline, so a turn-key installation is not available.
+However, the pipeline is composed of readily available bioinformatic tools/pipelines (see Dependencies).
+Each tool's installation process can be found by following the provided links.
+Additaionlly, these tools are available on the DNAnexus platform, which we used when developing the pipeline.
+
+In the case of Somalier, the provided Jupyter notebook depends on DNAnexus.
+
+In the case of CAVIAR, we leave it to users to use a GWAS pipeline that best fits their data/study.
 
 ### Inputs
 Input data format is CVF format as it is the standard format for storing variation data (ref), because it is unambiguous, scalable and flexible.
