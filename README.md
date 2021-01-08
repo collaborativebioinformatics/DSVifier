@@ -6,10 +6,12 @@ The objective of this project is to take annotated variants from mixed tissue sa
 ## Why should we solved it?
 
 ## Workflow Diagram
-![Workflow Diagram](images/workflow_v3.png "Workflow Diagram")
+![Workflow Diagram](images/workflow_v4.png "Workflow Diagram")
 
 ## How to use ?
-This pipeline is conceived to be used with the data generated with the pipeline described at [expressed-variant-impact](https://github.com/collaborativebioinformatics/expressed-variant-impact). The output data can then be used with the [viravate2](https://github.com/collaborativebioinformatics/viravate2) and processed by the [snpReportR](https://github.com/collaborativebioinformatics/expressed-variant-reporting). 
+This pipeline is conceived to be used with the data generated with the pipeline described at [expressed-variant-impact](https://github.com/collaborativebioinformatics/expressed-variant-impact). The output data can then be used with the [viravate2](https://github.com/collaborativebioinformatics/viravate2) and processed by the [snpReportR](https://github.com/collaborativebioinformatics/expressed-variant-reporting).
+The `Somalier`can allow to identify sample swaps or duplicates in a file [@pedersenSomalierRapidRelatedness2020]. It will also give information on the ancestry or relatedness of the samples if the dataset is big enough >1000 samples.
+GWAS need a relatively important set of data to give accurate results (>10000).
 
 ### Dependencies
 * [GLnexus](https://github.com/dnanexus-rnd/GLnexus)
@@ -38,6 +40,7 @@ For the `Somalier` analysis, the site file used in this example can be find here
 
 ### Validation dataset
 **Somalier:**
+
 The tool does not seem to resolve the ancestry and relatedness, but that is not surprising, because the genome sketch is based on the 1000 genomes project.
 A possible resolution could be achieved by using a genome sketch based on cell lines. So finding the normal samples and using the instructions from the somalier github to generate the sketches as well as a set of labels for the cells associated with each sketch.
 There are data sets that can be used to generate these genome sketches (https://www.ebi.ac.uk/ega/studies/EGAS00001000610 and https://www.nature.com/articles/nbt.3080 - not sure if this one contains our cells). 
@@ -46,7 +49,7 @@ Or, another option to test this method is to use another data set that would ali
 
 
 ## References
-@pedersenSomalierRapidRelatedness2020
+
 
 ## People/Team
 James Baye  
